@@ -1,8 +1,27 @@
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
-    context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: "Hello " + req.query.name
-    };
-    context.done();
+const opengraph = require('open-graph-scraper');
+
+let getPageInfo = (req) => {
+    let url = req.query.url;
+
+    let promise = new Promise((resolve, reject) => {
+        opengraph({url: url}, function (err, results) {
+            if (err) {
+                resolve(err)
+            }
+            resolve(results);
+        })
+    });
+
+    return promise
+}
+
+module.exports = (context, req) => {
+    getPageInfo(req)
+    .then((results) => {
+        context.res = {
+            body: results
+        };
+
+        context.done();
+    });    
 };

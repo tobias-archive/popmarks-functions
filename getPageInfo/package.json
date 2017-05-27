@@ -1,0 +1,22 @@
+{
+  "name": "popmarks-functions",
+  "version": "1.0.0",
+  "description": "functions for popmarks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobiaswright/popmarks-functions.git"
+  },
+  "author": "Tobias Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tobiaswright/popmarks-functions/issues"
+  },
+  "homepage": "https://github.com/tobiaswright/popmarks-functions#readme",
+  "dependencies": {
+    "open-graph-scraper": "^2.5.1"
+  }
+}
